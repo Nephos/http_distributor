@@ -1,0 +1,13 @@
+name: crystal_proxy
+version: 0.1.0
+
+authors:
+  - Arthur Poulet <arthur.poulet@cryptolab.net>
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+  crystal_random_agent:
+    github: Nephos/crystal_random_agent

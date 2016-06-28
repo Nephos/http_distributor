@@ -1,0 +1,18 @@
+version: 1.0
+shards:
+  crystal_random_agent:
+    github: Nephos/crystal_random_agent
+    commit: d335a4d56a07900b239eea784d6b1bd381779048
+
+  kemal:
+    github: sdogruyol/kemal
+    version: 0.13.0
+
+  kilt:
+    github: jeromegn/kilt
+    version: 0.3.3
+
+  radix:
+    github: luislavena/radix
+    version: 0.3.0
+
