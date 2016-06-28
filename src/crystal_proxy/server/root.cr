@@ -1,3 +1,0 @@
-get "/" do
-  "ok"
-end

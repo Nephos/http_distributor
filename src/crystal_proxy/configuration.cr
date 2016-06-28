@@ -6,7 +6,7 @@ module CrystalProxy
     # Duration to wait before any new request on a domain
     @wait_fixed : NumericValue
     # Duration range to wait before any new request on a domain
-    @wait_random : Range(NumericValue, NumericValue)?
+    @wait_random : Range(Float64, Float64)?
     # Coeficient to multiply the delay before any new request on a domain
     # delay = wait + ping * coeficient
     @wait_delay_coeficient : NumericValue
@@ -19,6 +19,14 @@ module CrystalProxy
       @wait_random = nil,
       @wait_delay_coeficient = 1.0
       )
+    end
+
+    def wait : NumericValue
+      if @wait_random.nil?
+        @wait_fixed
+      else
+        rand @wait_random as Range(Float64, Float64)
+      end
     end
 
   end
