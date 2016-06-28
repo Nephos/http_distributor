@@ -15,6 +15,7 @@ TODO: Write installation instructions here
 ### Routes
 - ``/get/url_base64_encoded``
 - ``/get/config``
+- ``/get/domains``
 - ``/get/ping``
 
 ### Important

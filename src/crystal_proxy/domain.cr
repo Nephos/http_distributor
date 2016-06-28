@@ -4,10 +4,15 @@ module CrystalProxy
     @mutex : Mutex
     @config : Configuration
     @next_usage_at : Time
+    @usages : Array(Time)
+
+    getter mutex, config, next_usage_at, usages
+    setter config, next_usage_at
 
     def initialize(@config = nil)
       @mutex = Mutex.new
       @next_usage_at = Time.now
+      @usages = [] of Time
     end
 
     def next_usage
@@ -15,7 +20,7 @@ module CrystalProxy
       nu < 0 ? 0.0 : nu
     end
 
-    def wait_for_lock
+    private def wait_for_lock
       @mutex.lock
       begin
         sleep next_usage
@@ -29,6 +34,7 @@ module CrystalProxy
       res = nil
       wait_for_lock do
         config = config || @config
+        @usages << Time.now
         delay = Delay.to { res = yield }
         @next_usage_at = Time.now + Time::Span.new 0, 0, delay * config.wait_delay_coeficient + config.wait
       end

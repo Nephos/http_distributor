@@ -29,5 +29,19 @@ module CrystalProxy
       end
     end
 
+    def to_h
+      wait_random_display = if @wait_random.nil?
+        nil
+      else
+        [(@wait_random as Range(Float64, Float64)).begin, (@wait_random as Range(Float64, Float64)).end]
+      end
+      {
+        "wait_fixed" => @wait_fixed,
+        "wait_random" => wait_random_display,
+        "wait_delay_coeficient" => @wait_delay_coeficient,
+        "change_agent_probability" => @change_agent_probability
+      }
+    end
+
   end
 end
