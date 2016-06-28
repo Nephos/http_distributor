@@ -1,7 +1,3 @@
-$config = CrystalProxy::Configuration.new
-$client = CrystalProxy::Client.new($config)
-$domains = Hash(String, CrystalProxy::Domain).new
-
 get "/get/:url" do |env|
   url = env.params.url["url"]?
   if url
@@ -14,6 +10,6 @@ get "/get/:url" do |env|
       end
     end
   else
-    "No url base64 encoded provided... #{env.params.query.inspect}"
+    "No url base64 encoded provided..."
   end
 end
