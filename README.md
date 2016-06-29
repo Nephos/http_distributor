@@ -28,6 +28,14 @@ git push heroku master
 ./http_distributor [--port=PORT]
 ```
 
+### Configuration
+
+#### Environment variables
+
+- ``change_agent_probability``
+- ``wait_fixed``
+- ``wait_random_min`` and ``wait_random_max``
+- ``wait_delay_coefficient``
 
 ### Routes
 - ``/get/url_base64_encoded``
