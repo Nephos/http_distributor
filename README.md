@@ -8,7 +8,7 @@ Be sure you have ``crystal > 0.18``
 
 ```sh
 crystal deps
-crystal compile ./src/crystal_proxy
+crystal compile ./src/crystal_proxy --release
 ```
 
 ## Deploy on heroku
