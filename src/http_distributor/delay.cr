@@ -1,4 +1,4 @@
-module CrystalProxy
+module HttpDistributor
   class Delay
 
     @min : Float64

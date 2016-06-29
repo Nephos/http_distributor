@@ -2,7 +2,7 @@ require "./spec_helper"
 require "./delay"
 require "./client"
 
-describe CrystalProxy do
+describe HttpDistributor do
   # TODO: Write tests
 
   it "works" do

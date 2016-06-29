@@ -1,4 +1,4 @@
-name: crystal_proxy
+name: http_distributor
 version: 0.1.0
 
 authors:

@@ -1,2 +1,2 @@
 require "spec"
-require "../src/crystal_proxy_lib"
+require "../src/http_distributor_lib"

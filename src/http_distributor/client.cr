@@ -1,7 +1,7 @@
 require "http/client"
 require "crystal_random_agent"
 
-module CrystalProxy
+module HttpDistributor
   class Client
 
     @config : Configuration

@@ -1,4 +1,4 @@
-module CrystalProxy
+module HttpDistributor
   class Configuration
 
     # Probability for each request to use a new user agent

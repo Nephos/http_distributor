@@ -1,21 +1,21 @@
 require "kemal"
-require "../src/crystal_proxy_lib"
-require "../src/web/helpers/*"
-require "../src/web/*"
+#require "../src/http_distributor_lib"
+require "../src/helpers/*"
+require "../src/proxy/*"
 
-describe CrystalProxy::Client do
+describe HttpDistributor::Client do
   it "basics" do
     puts "Basic"
-    d = CrystalProxy::Client.new(CrystalProxy::Configuration.new)
+    d = HttpDistributor::Client.new(HttpDistributor::Configuration.new)
 
-    CrystalProxy::Client.req.get("http://google.fr/", d.headers) do |response|
+    HttpDistributor::Client.req.get("http://google.fr/", d.headers) do |response|
       puts response.body_io.gets_to_end
     end
   end
 
   it "real usage case" do
     host = "localhost"
-    #$domains[host] = CrystalProxy::Domain.new($config)
+    #$domains[host] = HttpDistributor::Domain.new($config)
     spawn { Kemal.run }
     sleep 0.1
     `curl "http://localhost:3000/config"`

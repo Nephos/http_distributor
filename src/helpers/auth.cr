@@ -1,5 +1,5 @@
 def authorized?(env)
-  env.params.query["auth_token"]? == $auth_token
+  $auth_token == nil || env.params.query["auth_token"]? == $auth_token
 end
 
 error 403 do

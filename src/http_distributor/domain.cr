@@ -1,4 +1,4 @@
-module CrystalProxy
+module HttpDistributor
   class Domain
 
     @mutex : Mutex
