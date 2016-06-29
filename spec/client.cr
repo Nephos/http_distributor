@@ -1,7 +1,7 @@
 require "kemal"
-require "../src/crystal_proxy"
-require "../src/proxy/helpers/*"
-require "../src/proxy/*"
+require "../src/crystal_proxy_lib"
+require "../src/web/helpers/*"
+require "../src/web/*"
 
 describe CrystalProxy::Client do
   it "basics" do

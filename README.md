@@ -8,14 +8,14 @@ Be sure you have ``crystal > 0.18``
 
 ```sh
 crystal deps
-crystal compile ./src/proxy
+crystal compile ./src/crystal_proxy
 ```
 
 ## Usage
 
 ### Start
 ```sh
-./proxy [--port=PORT]
+./crystal_proxy [--port=PORT]
 ```
 
 
