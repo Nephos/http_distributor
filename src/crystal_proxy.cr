@@ -3,7 +3,6 @@ module CrystalProxy
 end
 
 require "./crystal_proxy/*"
-require "kemal"
 require "secure_random"
 
 $config = CrystalProxy::Configuration.new
@@ -12,5 +11,3 @@ $domains = Hash(String, CrystalProxy::Domain).new
 $auth_token = ENV["AUTH_TOKEN"]? || SecureRandom.hex(8)
 
 STDERR.puts "AUTH_TOKEN IS: #{$auth_token}"
-
-require "./crystal_proxy/server/*"

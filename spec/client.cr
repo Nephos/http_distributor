@@ -1,3 +1,8 @@
+require "kemal"
+require "../src/crystal_proxy"
+require "../src/proxy/helpers/*"
+require "../src/proxy/*"
+
 describe CrystalProxy::Client do
   it "basics" do
     puts "Basic"

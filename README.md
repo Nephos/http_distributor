@@ -4,13 +4,20 @@ TODO: Write a description here
 
 ## Installation
 
+Be sure you have ``crystal > 0.18``
 
-TODO: Write installation instructions here
-
+```sh
+crystal deps
+crystal compile ./src/proxy
+```
 
 ## Usage
 
 ### Start
+```sh
+./proxy [--port=PORT]
+```
+
 
 ### Routes
 - ``/get/url_base64_encoded``
