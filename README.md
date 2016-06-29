@@ -11,6 +11,16 @@ crystal deps
 crystal compile ./src/crystal_proxy
 ```
 
+## Deploy on heroku
+
+according to [crystal-lang.org](https://crystal-lang.org/2016/05/26/heroku-buildpack.html)
+
+```sh
+cd crystal_proxy
+heroku create --buildpack https://github.com/crystal-lang/heroku-buildpack-crystal.git
+git push heroku master
+```
+
 ## Usage
 
 ### Start
