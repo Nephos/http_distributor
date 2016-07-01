@@ -11,4 +11,3 @@ dependencies:
     github: sdogruyol/kemal
   crystal_random_agent:
     github: Nephos/crystal_random_agent
-    branch: dev

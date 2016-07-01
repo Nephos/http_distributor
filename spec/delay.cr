@@ -1,4 +1,5 @@
 describe HttpDistributor::Delay do
+
   it "basics" do
     d = HttpDistributor::Delay.new(1, 2)
     10.times{((1..2).includes? d.get).should eq true}

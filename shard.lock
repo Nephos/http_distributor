@@ -2,7 +2,7 @@ version: 1.0
 shards:
   crystal_random_agent:
     github: Nephos/crystal_random_agent
-    commit: b233204471270d5fd4546ff2d435e15291277f50
+    version: 0.1.7
 
   kemal:
     github: sdogruyol/kemal
