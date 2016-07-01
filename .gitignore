@@ -3,5 +3,4 @@
 /.crystal/
 /.shards/
 
-proxy
-http_distributor
+/http_distributor
