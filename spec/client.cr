@@ -1,5 +1,5 @@
 require "kemal"
-#require "../src/http_distributor_lib"
+# require "../src/http_distributor_lib"
 require "../src/helpers/*"
 require "../src/proxy/*"
 
@@ -15,7 +15,7 @@ describe HttpDistributor::Client do
 
   it "real usage case" do
     host = "localhost"
-    #$domains[host] = HttpDistributor::Domain.new($config)
+    # $domains[host] = HttpDistributor::Domain.new($config)
     spawn { Kemal.run }
     sleep 0.1
     `curl "http://localhost:3000/config"`

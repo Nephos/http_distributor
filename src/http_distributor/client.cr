@@ -3,7 +3,6 @@ require "crystal_random_agent"
 
 module HttpDistributor
   class Client
-
     @config : Configuration
     @headers : HTTP::Headers
 
@@ -16,16 +15,16 @@ module HttpDistributor
 
     def self.generate_headers
       # "GET": "/api/HTTP/Headers.html HTTP/1.1",
-      #"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      #"Referer": http://....
-      h = HTTP::Headers.new
-      h["User-Agent"] = Client.random_user_agent
-      h["Accept-Language"] = "en-US,en;q=0.5"
-      h["Accept-Encoding"] = "gzip, deflate"
-      h["DNT"] = "1"
-      h["Connection"] = "keep-alive"
-      h["Cache-Control"] = "max-age=0"
-      h
+      # "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      # "Referer": http://....
+      h = HTTP::Headers{
+        "User-Agent"      => Client.random_user_agent,
+        "Accept-Language" => "en-US,en;q=0.5",
+        "Accept-Encoding" => "gzip, deflate",
+        "DNT"             => "1",
+        "Connection"      => "keep-alive",
+        "Cache-Control"   => "max-age=0",
+      }
     end
 
     def change_user_agent
@@ -41,9 +40,8 @@ module HttpDistributor
     end
 
     def req
-      change_user_agent if rand(0.0 .. 1.0) < @config.change_agent_probability
+      change_user_agent if rand(0.0..1.0) < @config.change_agent_probability
       HTTP::Client
     end
-
   end
 end

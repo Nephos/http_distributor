@@ -7,5 +7,4 @@ describe HttpDistributor do
 
   it "works" do
   end
-
 end

@@ -1,6 +1,5 @@
 module HttpDistributor
   class Domain
-
     @mutex : Mutex
     @config : Configuration
     @next_usage_at : Time
@@ -33,7 +32,7 @@ module HttpDistributor
     # remove the elements in @usages older than `seconds`
     private def clear_usages_from!(seconds)
       t = Time.now - Time::Span.new(0, 0, seconds)
-      @usages.shift @usages.index{|e| e > t} || 0
+      @usages.shift @usages.index { |e| e > t } || 0
     end
 
     def use(config : Configuration? = nil)
@@ -51,10 +50,9 @@ module HttpDistributor
     def to_h
       {
         "next_usage_at" => next_usage_at.to_s,
-        "usage_count" => usages.size,
-        "usages" => usages.map{|t| t.to_s}
+        "usage_count"   => usages.size,
+        "usages"        => usages.map { |t| t.to_s },
       }
     end
-
   end
 end

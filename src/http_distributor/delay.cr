@@ -1,6 +1,5 @@
 module HttpDistributor
   class Delay
-
     @min : Float64
     @max : Float64
 
@@ -31,6 +30,5 @@ module HttpDistributor
     def to : Float64
       Delay.to { yield }
     end
-
   end
 end
