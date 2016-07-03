@@ -34,11 +34,8 @@ module HttpDistributor
     end
 
     def to_h
-      wait_random_display = if @wait_random.nil?
-                              nil
-                            else
-                              [(@wait_random.as(Range(Float64, Float64))).begin, (@wait_random.as(Range(Float64, Float64))).end]
-                            end
+      wait_random_display = @wait_random.nil? ||
+        [(@wait_random.as(Range(Float64, Float64))).begin, (@wait_random.as(Range(Float64, Float64))).end]
       {
         "wait_fixed"               => @wait_fixed,
         "wait_random"              => wait_random_display,
