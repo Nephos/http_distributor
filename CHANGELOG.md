@@ -15,3 +15,4 @@
   - Basic comments
 - Multiple monitoring tools
 - Extensible architecture
+- Docker available

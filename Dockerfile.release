@@ -1,0 +1,14 @@
+#FROM manastech/crystal
+FROM greyltc/archlinux
+MAINTAINER Arthur Poulet <arthur.poulet@mailoo.org>
+
+# Add this directory to container as /app
+ADD . /app
+WORKDIR /app
+
+# Build our app
+curl https://github.com/Nephos/http_distributor/releases/download/v0.1.0/http_distributor.x86_64 -O app
+
+# Start
+EXPOSE 3000
+ENTRYPOINT ./app --port 3000
