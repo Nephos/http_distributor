@@ -1,8 +1,4 @@
-module HttpDistributor
-  alias NumericValue = Float32 | Float64 | Int32 | Int64
-end
-
-require "./http_distributor/*"
+require "./*"
 require "secure_random"
 
 $config = HttpDistributor::Configuration.new

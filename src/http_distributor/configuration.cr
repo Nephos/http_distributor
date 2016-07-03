@@ -1,14 +1,14 @@
 module HttpDistributor
   class Configuration
     # Probability for each request to use a new user agent
-    @change_agent_probability : NumericValue
+    @change_agent_probability : Number::Primitive
     # Duration to wait before any new request on a domain
-    @wait_fixed : NumericValue
+    @wait_fixed : Number::Primitive
     # Duration range to wait before any new request on a domain
     @wait_random : Range(Float64, Float64)?
     # Coeficient to multiply the delay before any new request on a domain
     # delay = wait + ping * coeficient
-    @wait_delay_coefficient : NumericValue
+    @wait_delay_coefficient : Number::Primitive
     # Keep log during n seconds. Influence memory usage
     @keep_log_duration : UInt32
 
@@ -25,7 +25,7 @@ module HttpDistributor
       @keep_log_duration = keep_log_duration.to_u32
     end
 
-    def wait : NumericValue
+    def wait : Number::Primitive
       if @wait_random.nil?
         @wait_fixed
       else

@@ -6,7 +6,7 @@ module HttpDistributor
     getter min, max
     setter min, max
 
-    def initialize(min : NumericValue, max : NumericValue)
+    def initialize(min : Number::Primitive, max : Number::Primitive)
       @min = min.to_f64
       @max = max.to_f64
     end
