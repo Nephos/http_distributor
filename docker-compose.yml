@@ -1,4 +1,4 @@
-transfer_more:
+http_distributor:
   build: .
   ports:
     - 3000:3000
