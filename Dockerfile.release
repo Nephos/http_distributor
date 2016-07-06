@@ -3,12 +3,13 @@ FROM greyltc/archlinux
 MAINTAINER Arthur Poulet <arthur.poulet@mailoo.org>
 
 # Add this directory to container as /app
-ADD . /app
-WORKDIR /app
+WORKDIR /
+RUN pacman -Syu --noconfirm libyaml libxml2 gc libevent
 
 # Build our app
-curl https://github.com/Nephos/http_distributor/releases/download/v0.1.0/http_distributor.x86_64 -O app
+RUN curl -L https://github.com/Nephos/http_distributor/releases/download/v0.1.0/http_distributor.x86_64 -o /app
+RUN chmod a+x /app
 
 # Start
 EXPOSE 3000
-ENTRYPOINT ./app --port 3000
+ENTRYPOINT /app --port 3000
