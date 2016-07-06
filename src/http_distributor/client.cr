@@ -2,6 +2,8 @@ require "http/client"
 require "crystal_random_agent"
 
 module HttpDistributor
+  # The client is an interface to send a request.
+  # It wrap the http requests executed by the server.
   class Client
     @config : Configuration
     @headers : HTTP::Headers

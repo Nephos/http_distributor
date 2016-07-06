@@ -1,4 +1,8 @@
 module HttpDistributor
+  # The configuration is a class to handle the configuration of the project.
+  # It does mean the default values, and its integrity.
+  #
+  # It is also used to apply the configuration by using these parameters.
   class Configuration
     # Probability for each request to use a new user agent
     @change_agent_probability : Number::Primitive
@@ -25,6 +29,7 @@ module HttpDistributor
       @keep_log_duration = keep_log_duration.to_u32
     end
 
+    # return a valid duration to wait, in seconds
     def wait : Number::Primitive
       if @wait_random.nil?
         @wait_fixed
