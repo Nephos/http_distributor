@@ -54,7 +54,17 @@ Example: ``/get/xxx?auth_token=xxx``
 
 ## Development
 
-TODO: Write development instructions here
+The project is divided in 3 parts.
+
+### Proxy
+This directory contains the http rules, and use Kemal.
+
+### Helpers
+This part contains only the helper used by the proxy part.
+
+### http_distributor
+This is the main library. It contains every important classes oft he project.
+
 
 ## Contributing
 
