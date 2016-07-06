@@ -2,7 +2,7 @@
 
 http server which allows sneaky http request though it.
 
-## Installation
+## Installation [![travis](https://travis-ci.org/Nephos/http_distributor.svg)](https://travis-ci.org/Nephos/http_distributor)
 
 Be sure you have ``crystal > 0.18``
 
