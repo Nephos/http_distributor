@@ -1,4 +1,4 @@
-def root_get_url(env)
+private def root_get_url(env)
   url = env.params.url["url"]?
   return "No url base64 encoded provided..." if url.nil?
 
@@ -11,10 +11,10 @@ def root_get_url(env)
     return "Invalid url \"#{url}\""
   end
 
-  $domains[host] = HttpDistributor::Domain.new($config) unless $domains[host]?
-  $domains[host].use do
+  DOMAINS[host] = HttpDistributor::Domain.new(CONFIG) unless DOMAINS[host]?
+  DOMAINS[host].use do
     begin
-      $client.req.get(url, $client.headers) do |res|
+      CLIENT.req.get(url, CLIENT.headers) do |res|
         res.body_io.gets_to_end
       end
     rescue err

@@ -1,2 +1,2 @@
 require "spec"
-require "../src/http_distributor/lib"
+require "../src/http_distributor/*"

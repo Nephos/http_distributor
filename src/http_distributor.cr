@@ -1,5 +1,5 @@
 require "kemal"
-require "./http_distributor/lib"
+require "./http_distributor/init"
 
 require "./helpers/*"
 require "./proxy/*"
