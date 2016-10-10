@@ -14,3 +14,4 @@ update:
 install:
 	shards install
 	@echo "warning: this is not a system install"
+.PHONY: all run build release clean update install
