@@ -1,17 +1,22 @@
-FLAGS = --stats
+NAME=http_distributor
 
-all: release
+all: deps_opt build
+
 run:
-	crystal run ./src/http_distributor.cr
+	crystal run src/$(NAME).cr
 build:
-	crystal build $(FLAGS) ./src/http_distributor.cr
+	crystal build src/$(NAME).cr --stats
 release:
-	crystal build $(FLAGS) ./src/http_distributor.cr --release
-clean:
-	@echo "nothing to clean"
-update:
-	shards update
-install:
-	shards install
-	@echo "warning: this is not a system install"
-.PHONY: all run build release clean update install
+	crystal build src/$(NAME).cr --stats --release
+test:
+	crystal spec
+deps:
+	crystal deps install
+deps_update:
+	crystal deps update
+deps_opt:
+	@[ -d lib/ ] || make deps
+doc:
+	crystal docs
+
+.PHONY: all run build release test deps deps_update doc
