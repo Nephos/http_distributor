@@ -39,9 +39,9 @@ git push heroku master
 
 ### Routes
 - ``/get/url_base64_encoded``
-- ``/get/config``
-- ``/get/domains``
-- ``/get/ping``
+- ``/config``
+- ``/domains``
+- ``/ping``
 
 ### Important
 You need an authentication token to do any request.
