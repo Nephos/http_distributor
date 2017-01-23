@@ -6,7 +6,7 @@ private def root_get_url(env)
     url = Base64.decode_string(url).strip
     host = URI.parse(url).host.to_s
   rescue err
-    STDERR.puts
+    STDERR.puts err
     env.response.status_code = 400
     return "Invalid url \"#{url}\""
   end
@@ -14,8 +14,11 @@ private def root_get_url(env)
   DOMAINS[host] = HttpDistributor::Domain.new(CONFIG) unless DOMAINS[host]?
   DOMAINS[host].use do
     begin
-      CLIENT.req.get(url, CLIENT.headers) do |res|
+      CLIENT.exec("GET", url) do |res|
         res.body_io.gets_to_end
+        # Zlib::Inflate.gzip(res.body_io) do |inflate|
+        #   inflate.gets_to_end
+        # end
       end
     rescue err
       STDERR.puts "Error fetching: \"#{url}\": #{err}"
