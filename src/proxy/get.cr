@@ -16,9 +16,6 @@ private def root_get_url(env)
     begin
       CLIENT.exec("GET", url) do |res|
         res.body_io.gets_to_end
-        # Zlib::Inflate.gzip(res.body_io) do |inflate|
-        #   inflate.gets_to_end
-        # end
       end
     rescue err
       STDERR.puts "Error fetching: \"#{url}\": #{err}"

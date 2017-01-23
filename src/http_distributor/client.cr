@@ -43,12 +43,12 @@ module HttpDistributor
     # "Referer": http://....
     def self.generate_headers
       HTTP::Headers{
-        "User-Agent" => Client.random_user_agent,
-        # "Accept-Language" => "en-US,en;q=0.5",
-        # "Accept-Encoding" => "gzip, deflate",
-        # "DNT"             => "1",
-        # "Connection"      => "keep-alive",
-        # "Cache-Control"   => "max-age=0",
+        "User-Agent"      => Client.random_user_agent,
+        "Accept-Language" => "en-US,en;q=0.5",
+        "Accept-Encoding" => "gzip, deflate",
+        "DNT"             => "1",
+        "Connection"      => "keep-alive",
+        "Cache-Control"   => "max-age=0",
       }
     end
   end
